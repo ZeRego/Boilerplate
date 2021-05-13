@@ -8,7 +8,7 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "release": "standard-version",
+    "release": "standard-version --no-verify",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint *.{js,jsx,ts,tsx}",
