@@ -47,8 +47,11 @@ function appReducer(state: AppState, action: Action): AppState {
   }
 }
 
-export const AppProvider: FC = ({ children }) => {
-  const [state, dispatch] = useReducer(appReducer, { items: [] });
+export const AppProvider: FC<{ defaultState?: AppState }> = ({
+  defaultState = { items: [] },
+  children,
+}) => {
+  const [state, dispatch] = useReducer(appReducer, defaultState);
   const value = { state, dispatch };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
