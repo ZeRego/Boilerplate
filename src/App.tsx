@@ -1,38 +1,47 @@
-import React, { useState, useEffect, FC } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import {
+  Container,
+  createStyles,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
+import Todos from './components/todos';
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      width: '500px',
+    },
+    title: {
+      'text-align': 'center',
+      color: '#fff',
+      'font-size': '6em',
+      'font-weight': 'bold',
+      'text-shadow': `0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15)`,
+    },
+  }),
+);
 
 const App: FC = () => {
-  // Create the count state.
-  const [count, setCount] = useState<number>(0);
-  // Create the counter (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <Container className={classes.root}>
+      <Typography gutterBottom variant="h6" className={classes.title}>
+        Todo List
+      </Typography>
+      <Todos />
+    </Container>
   );
 };
 
