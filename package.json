@@ -11,6 +11,8 @@
     "release": "standard-version --no-verify",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "lint": "eslint *.{js,jsx,ts,tsx}",
     "prepare": "husky install"
   },
@@ -29,6 +31,7 @@
     "@snowpack/plugin-dotenv": "^2.1.0",
     "@snowpack/plugin-react-refresh": "^2.5.0",
     "@snowpack/plugin-typescript": "^1.2.1",
+    "@testing-library/cypress": "^7.0.6",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@types/jest": "^26.0.23",
@@ -38,8 +41,10 @@
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
+    "cypress": "^7.3.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-react": "^7.23.2",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
@@ -54,7 +59,7 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint",
       "prettier --write",
-      "jest --coverage --changedSince=master"
+      "jest --passWithNoTests --changedSince=master"
     ]
   }
 }

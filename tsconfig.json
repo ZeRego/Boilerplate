@@ -18,7 +18,7 @@
     /* Additional Options */
     "strict": true,
     "skipLibCheck": true,
-    "types": ["jest", "snowpack-env", "@testing-library/jest-dom"],
+    "types": ["jest", "snowpack-env", "@testing-library/jest-dom", "cypress", "@testing-library/cypress"],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
